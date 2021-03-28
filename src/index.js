@@ -533,13 +533,13 @@ export function useDropzone(options = {}) {
             return
           }
 
-          dispatch({
-            draggedFiles,
-            isDragActive: true,
-            type: 'setDraggedFiles'
-          })
-
+          
           if (onDragEnter) {
+            dispatch({
+              draggedFiles,
+              isDragActive: true,
+              type: 'setDraggedFiles'
+            })
             onDragEnter(event)
           }
         })
@@ -591,13 +591,13 @@ export function useDropzone(options = {}) {
         return
       }
 
-      dispatch({
-        isDragActive: false,
-        type: 'setDraggedFiles',
-        draggedFiles: []
-      })
-
+      
       if (isEvtWithFiles(event) && onDragLeave) {
+        dispatch({
+          isDragActive: false,
+          type: 'setDraggedFiles',
+          draggedFiles: []
+        })
         onDragLeave(event)
       }
     },
