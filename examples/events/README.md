@@ -21,6 +21,7 @@ function OuterDropzone(props) {
 
 function InnerDropzone(props) {
   const {getRootProps} = useDropzone({noDragEventsBubbling: true});
+  console.log('re render')
   return (
     <div {...getRootProps({className: 'dropzone'})}>
       <p>Inner dropzone</p>
